@@ -3,7 +3,7 @@
 
 DD脚本备份
 
-
+ Default root password: MoeClub.org
 ## Debian/Ubuntu:
 ```
 apt-get update
