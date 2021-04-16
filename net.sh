@@ -828,7 +828,7 @@ EOF
 [[ "$(echo "$DIST" |grep -o '^[0-9]\{1\}')" == '5' ]] && sed -i '0,/^%end/s//#%end/' /tmp/boot/ks.cfg
 fi
 
-find . | cpio -H newc --create --verbose | gzip -9 > /boot/initrd.img;
+find . | cpio -H newc --create --verbose | gzip -1 > /boot/initrd.img;
 rm -rf /tmp/boot;
 }
 
