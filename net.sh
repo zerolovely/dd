@@ -265,6 +265,7 @@ if [[ -z "$DIST" ]]; then
         [[ "$isDigital" == '8' ]] && DIST='jessie';
         [[ "$isDigital" == '9' ]] && DIST='stretch';
         [[ "$isDigital" == '10' ]] && DIST='buster';
+        [[ "$isDigital" == '11' ]] && DIST='bullseye';
       }
     }
     LinuxMirror=$(SelectMirror "$Relese" "$DIST" "$VER" "$tmpMirror")
@@ -828,7 +829,7 @@ EOF
 [[ "$(echo "$DIST" |grep -o '^[0-9]\{1\}')" == '5' ]] && sed -i '0,/^%end/s//#%end/' /tmp/boot/ks.cfg
 fi
 
-find . | cpio -H newc --create --verbose | gzip -1 > /boot/initrd.img;
+find . | cpio -H newc --create --verbose | gzip -4 > /boot/initrd.img;
 rm -rf /tmp/boot;
 }
 
